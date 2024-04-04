@@ -38,6 +38,6 @@ async def perform_mood_pd(request: process_Mood_pd):
 
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8061))
+    port = int(os.getenv('PORT', 8080))
     uvicorn.run(app , host = '0.0.0.0' , port = port)
     
