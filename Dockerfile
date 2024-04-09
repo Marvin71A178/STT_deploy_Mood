@@ -10,3 +10,4 @@ RUN python3 -m pip install gdown
 RUN gdown --folder 'https://drive.google.com/drive/folders/1NLziHG4yfSc5DX7d2MxtJj3pWuMJ3OiW?usp=sharing' -O /deploy_Mood/Mood/
 # RUN gdown --folder 'https://drive.google.com/drive/folders/1Oez7sEnwvsb7g8qYNSXQ9lAMTEFFAkv0?usp=sharing' -O /deploy_Mood/Mood/
 
+ENTRYPOINT ["python3" ,"-m" , "app"]
