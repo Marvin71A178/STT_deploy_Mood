@@ -14,7 +14,7 @@ import os
 load_dotenv()
 
 # 從環境變量中獲取端口號，如果不存在則默認使用8000
-port = int(os.getenv("PORT", 8050))
+port = int(os.getenv("PORT", 80))
 
 # API Model
 class MoodAnaLyzeModel(BaseModel):
