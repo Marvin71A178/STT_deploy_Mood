@@ -1,7 +1,7 @@
 FROM storyteller123/cuda118_cudnn_pytorch210_simpletransformer
 COPY . /deploy_Mood/
 
-EXPOSE 80
+EXPOSE 8080
 
 WORKDIR /deploy_Mood/
 RUN python3 -m pip install --upgrade pip
