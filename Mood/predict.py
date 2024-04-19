@@ -11,13 +11,12 @@ def prediction(listTestData):
     model_args = MultiLabelClassificationArgs()
     model_args.train_batch_size = 64
     model_args.num_train_epochs = 3
-    model_args.output_attentions = True
 
     # 讀取 ClassificationModel
     model = MultiLabelClassificationModel(
         'bert', 
         f"{dir_name}", # 這裡要改成訓練完成的模型資料夾路徑
-        use_cuda=True, 
+        use_cuda=False, 
         cuda_device=0, 
         num_labels=6, 
         args=model_args
