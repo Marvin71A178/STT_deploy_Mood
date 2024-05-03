@@ -14,14 +14,7 @@ origins = [
     "http://localhost:8080",
 ]
 
-# 添加CORS中介軟體
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
 
 # 定義請求體模型
 class ProcessMoodRequest(BaseModel):
@@ -45,6 +38,17 @@ async def perform_mood_pd(request: ProcessMoodRequest):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# 添加CORS中介軟體
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 80))
